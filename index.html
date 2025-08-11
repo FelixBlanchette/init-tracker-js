@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiative Tracker</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <button>Reset</button>
+            <button>Next Turn</button>
+            <form id="trackerForm">
+                <label for="name">Name: </label>
+                <input type="text" id="name" required>
+                <label for="init">Initiative: </label>
+                <input type="number" id="init" required>
+                <label for="lp">Life points: </label>
+                <input type="number" id="lp" required>
+                <button type="submit">Add a tracker</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script/Tracker.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>
