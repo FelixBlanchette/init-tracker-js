@@ -4,8 +4,7 @@ let trackerList = []
 let turnTracker = null
 
 const addTrackerOnClick = (nameInput, initCount, lifePoints) => {
-    const t = new Tracker(nameInput, initCount, lifePoints, false, false)
-    console.log(t)
+    const t = new Tracker(nameInput, initCount, lifePoints)
     trackerList.push(t)
     renderTracker()
     return t
@@ -26,7 +25,7 @@ const renderTracker = () => {
         const initEl = document.createElement("p")
         initEl.innerHTML = `<strong>Initiative: </strong>${tracker._initiativeCount}`
         const lpEl = document.createElement("p")
-        lpEl.innerHTML = "<strong>Life points: </strong>" + tracker._lifePoints
+        lpEl.innerHTML = `<strong>Life points: </strong>${tracker._lifePoints}`
 
         const healBtn = document.createElement("button")
         healBtn.textContent = "+"
