@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Initiative Tracker</title>
 </head>
 
 <body>
     <div class="container">
         <div class="controls">
-            <button>Reset</button>
-            <button>Next Turn</button>
             <form id="trackerForm">
                 <label for="name">Name: </label>
                 <input type="text" id="name" required>
@@ -21,7 +20,10 @@
                 <input type="number" id="lp" required>
                 <button type="submit">Add a tracker</button>
             </form>
+            <button>Reset</button>
+            <button>Next Turn</button>
         </div>
+        <div class="tracker-container"></div>
     </div>
 
     <script src="script/Tracker.js"></script>
