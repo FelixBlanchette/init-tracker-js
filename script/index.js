@@ -21,12 +21,33 @@ const renderTracker = () => {
         if (tracker._isTurnTracker) card.classList.add("turn")
         if (tracker._isDead) card.classList.add("dead")
 
-        card.innerHTML = `
-            <h3>${tracker._name}</h3>
-            <p><strong>Initiative:</strong>${tracker._initiativeCount}</p>
-            <p><strong>Life Points:</strong>${tracker._lifePoints}</p>
-            `
-        console.log(trackerContainer)
+        const nameEl = document.createElement("h3")
+        nameEl.textContent = tracker._name
+        const initEl = document.createElement("p")
+        initEl.innerHTML = `<strong>Initiative: </strong>${tracker._initiativeCount}`
+        const lpEl = document.createElement("p")
+        lpEl.innerHTML = "<strong>Life points: </strong>" + tracker._lifePoints
+
+        const healBtn = document.createElement("button")
+        healBtn.textContent = "+"
+        healBtn.addEventListener("click", () => {
+            tracker.healDamage()
+            renderTracker()
+        })
+
+        const dmgBtn = document.createElement("button")
+        dmgBtn.textContent = "-"
+        dmgBtn.addEventListener("click", () => {
+            tracker.takeDamage()
+            renderTracker()
+        })
+
+        card.appendChild(nameEl);
+        card.appendChild(initEl);
+        card.appendChild(lpEl);
+        card.appendChild(healBtn);
+        card.appendChild(dmgBtn);
+
         trackerContainer.appendChild(card)
     })
 }

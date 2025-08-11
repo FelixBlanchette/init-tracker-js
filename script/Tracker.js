@@ -14,4 +14,12 @@ class Tracker {
     killTracker() {
         this._isDead = !this._isDead
     }
+
+    takeDamage() {
+        this._lifePoints -= 1
+    }
+
+    healDamage() {
+        this._lifePoints += 1
+    }
 }
